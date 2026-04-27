@@ -41,18 +41,18 @@ console.log(document.querySelector(".list"));
 
 // Знаходимо всі елементи, які мають атрибут data-topic.
 // Квадратні дужки [] у селекторі означають, що ви шукаєте елементи ЗА АТРИБУТОМ, а не за тегом або класом.
-console.log(document.querySelectorAll("[data-topic]"));
+console.log(document.querySelectorAll("[data-topic]"));    //   NodeList(4) [li, li, li, li]
 
 // Квадратні дужки — це стандарт CSS для СЕЛЕКТОРІВ АТРИБУТІВ, який перейшов у "querySelectorAll".
 
-// Якщо треба знайти елемент тільки за унікальним селектором "<li data-topic="props">", тоді :
+// Якщо треба знайти елемент тільки за унікальним селектором "<li data-topic="props">" (тобто в квадратні дужки я повністю копіюю атрибут і його значення з тега li - data-topic="props"), тоді :
 
-console.log(document.querySelector('[data-topic="props"]'));
+console.log(document.querySelector('[data-topic="props"]'));    //  li
 
 
 //......
 
-// Так і для кнопки можна написати :
+// Так і для кнопки (в квадратні дужки копіюю атрибут і його значення з тега button - type="submit") можна написати :
 //  <button type="submit" class="contact-form-btn js-contact-form-submit">
 
 console.log(document.querySelector('[type="submit"]'));
@@ -66,8 +66,39 @@ console.log(document.querySelectorAll("[id]"));
 //............................
 
 
-// 5 - отримай перший елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль;
+// 5 - отримай перший елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль :
+
+console.log(document.querySelector("[data-topic]"));   //  <li data-topic="navigation">
+
+// document.querySelector()  -	Повертає перший елемент, що відповідає селектору
+// "[data-topic]"  -	Селектор атрибута — шукає елементи з атрибутом data-topic
+
+
+//............................
+//............................
+
+
 // 6 - отримай останній елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль;
+
+const arrElement = document.querySelectorAll("[data-topic]");
+console.log(arrElement);
+
+const numberElement = arrElement.length;     
+console.log(numberElement);    //   4    
+
+const lastElement = arrElement[numberElement - 1]   
+console.log(lastElement);     //     dataset: DOMStringMap {topic: 'manipulation'}
+
+// або :
+
+// const lastElement = arrElement[arrElement.length - 1];
+
+
+//............................
+//............................
+
+
+
 // 7 - який елемент є сусідом для h1? Знайти і виведи його в консоль;
 // 8 - по тегу h3 знайти всі заголовки та виведи їх у консоль;
 // 9 - для кожного елмента h3 додай class="active", який змінить колір заголовка на червоний колір
