@@ -109,7 +109,22 @@
 // console.log('Наступний сусідній елемент для h1:', nextSibling);
 
 
+//............................
+//............................
 
+
+// 8 - по тегу h3 знайти всі заголовки та виведи їх у консоль :
+
+// const h3Elements = document.querySelectorAll("h3");
+// console.log(h3Elements);   // це ПСЕВДОМАСИВ - методи не працюють !!!  (тільки працює метод forEach(callback), item(index), entries(), keys(), values())
+
+// // Варіант-1  (метод "forEach")
+// // Перетворюємо ПСЕВДОМАСИВ на звичайний МАСИВ :
+// h3Elements.forEach(element => console.log(element.textContent));
+
+// // Варіант-2:
+// // Перетворюємо ПСЕВДОМАСИВ на звичайний МАСИВ :
+// // [...h3Elements].map(item => console.log(item.textContent));
 
 
 
