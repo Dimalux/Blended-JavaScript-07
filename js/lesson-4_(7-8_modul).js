@@ -127,6 +127,24 @@
 // // [...h3Elements].map(item => console.log(item.textContent));
 
 
+//............................
+//............................
+
+
+// 9 - для кожного елемента h3 додай class="active", який змінить колір заголовка на червоний колір :
+
+// const h3Elements = document.querySelectorAll("h3");
+
+// const h3ElementsNew = [...h3Elements].map(item => {
+//     item.classList.add("active");
+// return item;
+// });
+
+// console.log(h3ElementsNew);
+
+
+//............................
+//............................
 
 
 
