@@ -234,7 +234,17 @@
 
 // <h3 class="completed">Властивості та атрибути</h3>
 
-const title 
+const title = document.querySelector("h3.completed");
+console.log(title.textContent);   //  Властивості та атрибути
+
+
+//............................
+//............................
+
+
+
+
+
 
 
 // 16 - видали елемент li в якому знаходиться заголовок, який має class="completed"
