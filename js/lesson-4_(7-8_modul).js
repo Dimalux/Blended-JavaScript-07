@@ -175,10 +175,28 @@
 //............................
 
 
+// 12 - у елемента data-topic="navigation" знайди елемент "р" і зміни його текст на "Я змінив тут текст!" :
+
+// // Варіант-1 :
+// const itemElementText = document.querySelector("[data-topic='navigation'] p");
+
+// // // Варіант-2 :  або в два етапи :
+// // const itemElement = document.querySelector("[data-topic='navigation']");
+// // const itemElementText = itemElement.querySelector("p");
 
 
-// 12 - у елемента data-topic="navigation" знайди елемент р і зміни його текст на "Я змінив тут текст!".
+// itemElementText.textContent = "Я змінив тут текст!";
+
+
+//............................
+//............................
+
+
 // 13 - створи const currentTopic = "manipulation"; після цього знайди елемент у якогоо атрибут data-topic має значення, яке зберігається у змінній currentTopic і виведи його в консоль;
+
+
+
+
 // 14 - додай до знайденого елемента атрибут style і зроби його backgroundColor блакитним;
 // 15 - знайти в документі заголовок, який має class="completed" і виведи його в консоль;
 // 16 - видали елемент li в якому знаходиться заголовок, який має class="completed"
