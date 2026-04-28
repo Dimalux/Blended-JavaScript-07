@@ -58,7 +58,7 @@
 // console.log(document.querySelector('[type="submit"]'));
 // //......
 
-// // Якщо було бзавдання "Знайти всі елементи, які мають будь-який атрибут id", тоді по аналогії :  
+// // Якщо було б завдання "Знайти всі елементи, які мають будь-який атрибут id", тоді по аналогії :  
 // console.log(document.querySelectorAll("[id]"));
 
 
@@ -100,7 +100,7 @@
 
 // 7 - який елемент є сусідом для h1? Знайти і виведи його в консоль;
 
-// // Знаходимо елемент h1
+// // Знаходимо елемент h1 :
 // const h1Element = document.querySelector('h1');
 
 // // Знаходимо його наступного сусіда (next sibling). Якщо використати "nextElementSibling", він одразу візьме наступний HTML-елемент :
@@ -232,10 +232,59 @@
 
 // 15 - знайти в документі заголовок, який має class="completed" і виведи його в консоль :
 
-// <h3 class="completed">Властивості та атрибути</h3>
+// // <h3 class="completed">Властивості та атрибути</h3>
 
-const title = document.querySelector("h3.completed");
-console.log(title.textContent);   //  Властивості та атрибути
+// const title = document.querySelector("h3.completed");
+// console.log(title.textContent);   //  Властивості та атрибути
+
+
+//............................
+//............................
+
+
+// 16 - видали елемент li в якому знаходиться заголовок, який має class="completed" :
+
+// </li>
+//  <li data-topic="props">
+//  <h3 class="completed">Властивості та атрибути</h3>
+//  <p>
+//  elem.textContent, elem.classList, elem.style, elem.hasAttribute(name),
+//  elem.getAttribute(name), elem.setAttribute(name, value),
+//  elem.removeAttribute(name)
+//  </p>
+//  </li>
+
+
+// const title = document.querySelector(".completed");
+// console.log(title);    //   <h3 class="completed">Властивості та атрибути</h3>
+
+
+// // Щоб знайти батьківський елемент і видалити li, потрібно використати властивість parentElement (або parentNode) :
+
+// //............
+
+// // Варіант-1 :
+// // Піднімаємось до батьківського елемента "li" :
+// const listItem = title.parentElement;
+// console.log(listItem);
+
+
+// // Видаляємо знайдений "li" :
+// listItem.remove();
+
+//............
+
+// // Варіант-2  (ланцюжком) :
+// document.querySelector(".completed").parentElement.remove();
+
+//............
+
+// ПОЯСНЕННЯ :
+
+// 1)  title.parentElement — повертає батьківський елемент (li) ;
+
+// 2)  .remove() — видаляє елемент з DOM.
+
 
 
 //............................
@@ -245,9 +294,6 @@ console.log(title.textContent);   //  Властивості та атрибут
 
 
 
-
-
-// 16 - видали елемент li в якому знаходиться заголовок, який має class="completed"
 // 17 - після заголовка h1 (перед списком) додай новий елемент p і задай йому наступний текст: "Об'єктна модель документа (Document Object Model)"
 // 18 - додай новий елемент списку у кінець списка, його заголовок це - "Властивість innerHTML" а опис (р) - "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу". тобто, потрібно створити елемент LI потім наповнити H3 та P і готову LI закинути у кінець списку
 // 19 - зроби це саме, але використовуй шаблонні рядки та метод insertAdjacentHTML()
