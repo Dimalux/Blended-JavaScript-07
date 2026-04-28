@@ -40,10 +40,10 @@ console.log(document.querySelector(".list"));
 // console.log(document.dataset.topic);
 
 // Знаходимо всі елементи, які мають атрибут data-topic.
-// Квадратні дужки [] у селекторі означають, що ви шукаєте елементи ЗА АТРИБУТОМ, а не за тегом або класом.
+// КВАДРАТНІ ДУЖКИ [] у селекторі означають, що ви шукаєте елементи ЗА АТРИБУТОМ, а не за тегом або класом.
 console.log(document.querySelectorAll("[data-topic]"));    //   NodeList(4) [li, li, li, li]
 
-// Квадратні дужки — це стандарт CSS для СЕЛЕКТОРІВ АТРИБУТІВ, який перейшов у "querySelectorAll".
+// КВАДРАТНІ ДУЖК — це стандарт CSS для СЕЛЕКТОРІВ АТРИБУТІВ, який перейшов у "querySelectorAll".
 
 // Якщо треба знайти елемент тільки за унікальним селектором "<li data-topic="props">" (тобто в квадратні дужки я повністю копіюю атрибут і його значення з тега li - data-topic="props"), тоді :
 
@@ -71,7 +71,7 @@ console.log(document.querySelectorAll("[id]"));
 console.log(document.querySelector("[data-topic]"));   //  <li data-topic="navigation">
 
 // document.querySelector()  -	Повертає перший елемент, що відповідає селектору
-// "[data-topic]"  -	Селектор атрибута — шукає елементи з атрибутом data-topic
+// "[data-topic]"  -	СЕЛЕКТОР АТРИБУТА — шукає елементи з атрибутом data-topic
 
 
 //............................
