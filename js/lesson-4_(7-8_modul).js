@@ -160,12 +160,23 @@
 //............................
 
 
+// 11 - додай для знайденого елемента data-topic="navigation" атрибут style і зроби його backgroundColor жовтим :
+
+// const itemElement = document.querySelector("[data-topic='navigation']");
+
+// // Додаємо до елемента інлайн-стиль :
+// itemElement.style.backgroundColor = "yellow";
+
+// // // Якщо потрібен не фон, а колір тексту :
+// // itemElement.style.color = "red";  // колір тексту
+
+
+//............................
+//............................
 
 
 
 
-
-// 11 - додай для знайденого елемента data-topic="navigation" атрибут style і зроби його backgroundColor жовтим
 // 12 - у елемента data-topic="navigation" знайди елемент р і зміни його текст на "Я змінив тут текст!".
 // 13 - створи const currentTopic = "manipulation"; після цього знайди елемент у якогоо атрибут data-topic має значення, яке зберігається у змінній currentTopic і виведи його в консоль;
 // 14 - додай до знайденого елемента атрибут style і зроби його backgroundColor блакитним;
