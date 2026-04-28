@@ -192,8 +192,31 @@
 //............................
 
 
-// 13 - створи const currentTopic = "manipulation"; після цього знайди елемент у якогоо атрибут data-topic має значення, яке зберігається у змінній currentTopic і виведи його в консоль;
+// 13 - створи const currentTopic = "manipulation"; після цього знайди елемент у якого атрибут data-topic має значення, яке зберігається у змінній currentTopic і виведи його в консоль;
 
+
+// // Варіант МІЙ :
+// const currentTopic = "manipulation";
+
+// const itemElements = document.querySelectorAll("[data-topic]");
+
+//  console.log(itemElements);   //   NodeList(4) [ li, li, li, li ]
+ 
+//  const result = [...itemElements].find(item => item.dataset.topic === currentTopic);
+
+//  console.log(result);
+ 
+// //.......
+
+// // // Варіант чат  (Прямий селектор через ШАБЛОННИЙ РЯДОК) :
+// //  const currentTopic = "manipulation";
+// //  const result = document.querySelector(`[data-topic="${currentTopic}"]`);
+// //  console.log(result);
+
+
+
+//............................
+//............................
 
 
 
