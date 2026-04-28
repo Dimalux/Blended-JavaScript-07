@@ -9,7 +9,7 @@
 // console.log(bodyItem);
 
 // або :
-console.log(document.querySelector("body"));
+// console.log(document.querySelector("body"));
 
 
 //............................
@@ -17,7 +17,7 @@ console.log(document.querySelector("body"));
 
 
 // 2 - отримай елемент id="title" і виведи його в консоль;
-console.log(document.querySelector("#title"));
+// console.log(document.querySelector("#title"));
 
 
 //............................
@@ -25,7 +25,7 @@ console.log(document.querySelector("#title"));
 
 
 // 3 - отримай елемент class="list" і виведи його в консоль ^
-console.log(document.querySelector(".list"));
+// console.log(document.querySelector(".list"));
 
 
 //............................
@@ -37,29 +37,29 @@ console.log(document.querySelector(".list"));
 // Для отримання значення data-атрибута використовується властивість "dataset", після якої через крапку пишеться ім'я атрибута БЕЗ "data-" в стилі CamelCase (дефіс (-) замінюємо на велику літеру наступного слова (camelCase)). Дефіс (-) у JavaScript є ЗАБОРОНЕНИМ символом в іменах змінних, властивостей або ідентифікаторів. Дефіс у JavaScript інтерпретується як оператор віднімання !!!
 // Тобто "data-" відкидається, а інша частина імені записується як ім'я властивості об'єкта. :
 
-// console.log(document.dataset.topic);
+// // console.log(document.dataset.topic);
 
-// Знаходимо всі елементи, які мають атрибут data-topic.
-// КВАДРАТНІ ДУЖКИ [] у селекторі означають, що ви шукаєте елементи ЗА АТРИБУТОМ, а не за тегом або класом.
-console.log(document.querySelectorAll("[data-topic]"));    //   NodeList(4) [li, li, li, li]
+// // Знаходимо всі елементи, які мають атрибут data-topic.
+// // КВАДРАТНІ ДУЖКИ [] у селекторі означають, що ви шукаєте елементи ЗА АТРИБУТОМ, а не за тегом або класом.
+// console.log(document.querySelectorAll("[data-topic]"));    //   NodeList(4) [li, li, li, li]
 
-// КВАДРАТНІ ДУЖК — це стандарт CSS для СЕЛЕКТОРІВ АТРИБУТІВ, який перейшов у "querySelectorAll".
+// // КВАДРАТНІ ДУЖК — це стандарт CSS для СЕЛЕКТОРІВ АТРИБУТІВ, який перейшов у "querySelectorAll".
 
-// Якщо треба знайти елемент тільки за унікальним селектором "<li data-topic="props">" (тобто в квадратні дужки я повністю копіюю атрибут і його значення з тега li - data-topic="props"), тоді :
+// // Якщо треба знайти елемент тільки за унікальним селектором "<li data-topic="props">" (тобто в квадратні дужки я повністю копіюю атрибут і його значення з тега li - data-topic="props"), тоді :
 
-console.log(document.querySelector('[data-topic="props"]'));    //  li
+// console.log(document.querySelector('[data-topic="props"]'));    //  li
 
 
 //......
 
-// Так і для кнопки (в квадратні дужки копіюю атрибут і його значення з тега button - type="submit") можна написати :
-//  <button type="submit" class="contact-form-btn js-contact-form-submit">
+// // Так і для кнопки (в квадратні дужки копіюю атрибут і його значення з тега button - type="submit") можна написати :
+// //  <button type="submit" class="contact-form-btn js-contact-form-submit">
 
-console.log(document.querySelector('[type="submit"]'));
-//......
+// console.log(document.querySelector('[type="submit"]'));
+// //......
 
-// Якщо було бзавдання "Знайти всі елементи, які мають будь-який атрибут id", тоді по аналогії :  
-console.log(document.querySelectorAll("[id]"));
+// // Якщо було бзавдання "Знайти всі елементи, які мають будь-який атрибут id", тоді по аналогії :  
+// console.log(document.querySelectorAll("[id]"));
 
 
 //............................
@@ -68,10 +68,10 @@ console.log(document.querySelectorAll("[id]"));
 
 // 5 - отримай перший елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль :
 
-console.log(document.querySelector("[data-topic]"));   //  <li data-topic="navigation">
+// console.log(document.querySelector("[data-topic]"));   //  <li data-topic="navigation">
 
-// document.querySelector()  -	Повертає перший елемент, що відповідає селектору
-// "[data-topic]"  -	СЕЛЕКТОР АТРИБУТА — шукає елементи з атрибутом data-topic
+// // document.querySelector()  -	Повертає перший елемент, що відповідає селектору
+// // "[data-topic]"  -	СЕЛЕКТОР АТРИБУТА — шукає елементи з атрибутом data-topic
 
 
 //............................
@@ -80,28 +80,46 @@ console.log(document.querySelector("[data-topic]"));   //  <li data-topic="navig
 
 // 6 - отримай останній елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль;
 
-const arrElement = document.querySelectorAll("[data-topic]");
-console.log(arrElement);
+// const arrElement = document.querySelectorAll("[data-topic]");
+// console.log(arrElement);
 
-const numberElement = arrElement.length;     
-console.log(numberElement);    //   4    
+// const numberElement = arrElement.length;     
+// console.log(numberElement);    //   4    
 
-const lastElement = arrElement[numberElement - 1]   
-console.log(lastElement);     //     dataset: DOMStringMap {topic: 'manipulation'}
+// const lastElement = arrElement[numberElement - 1]   
+// console.log(lastElement);     //     dataset: DOMStringMap {topic: 'manipulation'}
 
-// або :
+// // або :
 
-// const lastElement = arrElement[arrElement.length - 1];
+// // const lastElement = arrElement[arrElement.length - 1];
 
 
 //............................
 //............................
-
 
 
 // 7 - який елемент є сусідом для h1? Знайти і виведи його в консоль;
-// 8 - по тегу h3 знайти всі заголовки та виведи їх у консоль;
-// 9 - для кожного елмента h3 додай class="active", який змінить колір заголовка на червоний колір
+
+// // Знаходимо елемент h1
+// const h1Element = document.querySelector('h1');
+
+// // Знаходимо його наступного сусіда (next sibling). Якщо використати "nextElementSibling", він одразу візьме наступний HTML-елемент :
+// const nextSibling = h1Element.nextElementSibling;
+
+// console.log('Наступний сусідній елемент для h1:', nextSibling);
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 10 - знайти елемент li який має атрибут data-topic з значенням "navigation" і виведи його в консоль;
 // 11 - додай для знайденого елемента data-topic="navigation" атрибут style і зроби його backgroundColor жовтим
 // 12 - у елемента data-topic="navigation" знайди елемент р і зміни його текст на "Я змінив тут текст!".
