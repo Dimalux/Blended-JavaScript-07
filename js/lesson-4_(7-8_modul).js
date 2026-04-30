@@ -363,6 +363,64 @@
 
 
 
+//............................
+//............................
+
+// Завдання 2:
+
+// 1) Створіть контейнер div (з класом number-container) в HTML-документі ;
+// 2) та динамічно створіть 100 блоків (з класом number) наповнивши їх рандомними
+// числами від 1 до 100 і додайте їх до контейнера div(numberContainer). 
+// Парні числа повинні мати зелений фон (додати клас even), 
+// Непарні числа - жовтий фон (додати клас odd).
+
+// const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+
+// 1) Створюємо контейнер div (з класом number-container) в HTML-документі :
+
+const numberContainer = document.createElement("div");
+
+numberContainer.classList.add("number-container");
+
+// 2)  Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві :
+document.body.append(numberContainer);
+
+//.............
+
+const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+
+// Варіант-1 -  через МАСИВ :
+// const arrContainer = [];
+
+// console.log(arrContainer);
+
+// let count = 0;
+// while (count < 100) {
+//   count += 1;
+// arrContainer.push(`<div class="number">${randomNumber()}</div>`)
+// }
+
+// numberContainer.insertAdjacentHTML("afterbegin", arrContainer.join(""));
+
+// Варіант-2 -  КОНКАТЕНАЦІЯ рядків (рядки з'єднуються в один довгий рядок) :
+
+let arrContainer = "";
+
+console.log(arrContainer);
+
+let count = 0;
+while (count < 100) {
+  count += 1;
+arrContainer += `<div class="number">${randomNumber()}</div>`;
+}
+
+numberContainer.insertAdjacentHTML("afterbegin", arrContainer);
+
+console.log(numberContainer);
+
+//.............
+
+
 
 
 
