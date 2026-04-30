@@ -324,6 +324,44 @@
 // // list.insertAdjacentHTML("beforeend", stringNew);
 
 
+// .............................
+
+// ПРИМІТКА :
+
+// ПОЯСНЕННЯ-12-4-4   Створення та видалення елементів.      (дивись рядок 969  -  00-TEST-Dima-git / modul-7.js)
+//                    Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
+//                    КОНКАТЕНАЦІЯ (додавання) вмісту всередині елемента ".innerHTML += htmlString;"
+
+// Важливі наслідки !!!
+// Хоча візуально здається, що ми просто ДОДАЄМО НОВИЙ ВМІСТ, насправді:
+// - весь HTML всередині article повністю перепаровується (парситься заново);
+// - будь-які раніше прив'язані обробники подій до дочірніх елементів будуть втрачені;
+// - посилання на існуючі DOM-вузли, які ви зберегли в змінних, стануть недійсними;
+// - При використанні конкатенації з "innerHTML +=" додаємо новий HTML-код САМЕ В КІНЕЦЬ, після всіх існуючих дочірніх елементів.
+
+// Приклад :  додавання (ПЕРЕЗАПИСУВАННЯ / ПОВНА ЗАМІНА) до елемннту "article" ще 2-х дочірних шаблонних рядків "<p>" і "<a>" :
+// // <article class="article">
+// //   <h2>Article title</h2>
+// // </article>
+
+// const article = document.querySelector(".article");
+// const htmlString = `<p class="article-text">Nullam quis ante. Vestibulum dapibus nunc ac augue. In consectetuer turpis ut velit.</p>
+//    <a class="link" href="#">Read more...</a>`;
+
+// article.innerHTML += htmlString;
+
+// .............................
+
+// 20 - очисти список :
+
+// // <ul class="list"></ul>
+
+// const list = document.querySelector(".list");
+
+// //   Очищаємо весь вміст "ul" :
+// list.remove();
+
+
 
 
 
