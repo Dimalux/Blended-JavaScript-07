@@ -136,4 +136,13 @@ span {
 
 /* ..................... */
 
+/* Завдання 2 : */
+.number-container .even {
+    background-color: green;
+}
 
+.number-container .odd {
+    background-color: yellow;
+}
+
+/* ..................... */

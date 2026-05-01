@@ -18,7 +18,12 @@
 // Updated upstream — версія, яка прийшла з віддаленого репозиторію (після git pull);
 // Stashed changes — ваші локальні зміни (які були в stash)
 
-// 2) Або натиснути на кнопуа внизу зправа "Resolve in Merge editor" (Вирішити в редакторі об'єднання) - відкриється нове вікно редагування з 3-мя полями.
+// 2) Або натиснути на кнопуа внизу зправа "Resolve in Merge editor". Кнопка "Resolve in Merge Editor" - це вбудований інструмент вирішення конфліктів. 
+// При натисканні відкривається спеціальний режим злиття "Merge Editor" (нове вікно редагування з 3-мя полями), який допомагає візуально вирішити конфлікт між трьома версіями файлу:
+
+// - Вхідні зміни (Incoming)	Те, що прийшло з віддаленого репозиторію (після git pull);
+// - Поточні зміни (Current)	Те, що було у вашому файлі до конфлікту;
+// - Результат (Result)	Те, що ви оберете в результаті.
 
 //...............
 
@@ -384,8 +389,6 @@
 // //   Очищаємо весь вміст "ul" :
 // list.remove();
 
-
-
 //............................
 //............................
 
@@ -401,56 +404,57 @@
 
 // 1) Створюємо контейнер div (з класом number-container) в HTML-документі :
 
-const numberContainer = document.createElement("div");
+// const numberContainer = document.createElement("div");
 
-numberContainer.classList.add("number-container");
+// numberContainer.classList.add("number-container");
 
-// 2)  Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві :
-document.body.append(numberContainer);
+// //.............
 
-//.............
+// // 2)  Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві :
+// document.body.append(numberContainer);
 
-const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+// //.............
 
-// Варіант-1 -  через МАСИВ :
-// const arrContainer = [];
+// // 3) Наповнюємо контейнер "numberContainer" 100 внутрішніми контейнерами (класом "number") з рандомними числами від 1 до 100 :
 
-// console.log(arrContainer);
+// const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+
+// // Варіант-1 -  через МАСИВ :
+// // const arrContainer = [];
+
+// // console.log(arrContainer);
+
+// // let count = 0;
+// // while (count < 100) {
+// //   count += 1;
+// // arrContainer.push(`<div class="number">${randomNumber()}</div>`)
+// // }
+
+// // numberContainer.insertAdjacentHTML("afterbegin", arrContainer.join(""));
+
+// // Варіант-2 -  КОНКАТЕНАЦІЯ рядків (рядки з'єднуються в один довгий рядок) :
+
+// let arrContainer = "";
 
 // let count = 0;
 // while (count < 100) {
 //   count += 1;
-// arrContainer.push(`<div class="number">${randomNumber()}</div>`)
+
+//   const numberAdd = randomNumber();
+
+//   // 4) Парні числа повинні мати ЗЕЛЕНИЙ фон (додати клас "even"). Непарні числа - ЖОВТИЙ фон (додати клас "odd") :
+//   const numberAddClass = numberAdd % 2 === 0 ? "even" : "odd";
+
+// arrContainer += `<div class="number ${numberAddClass}">${numberAdd}</div>`;
 // }
 
-// numberContainer.insertAdjacentHTML("afterbegin", arrContainer.join(""));
+// numberContainer.insertAdjacentHTML("afterbegin", arrContainer);
 
-// Варіант-2 -  КОНКАТЕНАЦІЯ рядків (рядки з'єднуються в один довгий рядок) :
-
-let arrContainer = "";
-
-console.log(arrContainer);
-
-let count = 0;
-while (count < 100) {
-  count += 1;
-arrContainer += `<div class="number">${randomNumber()}</div>`;
-}
-
-numberContainer.insertAdjacentHTML("afterbegin", arrContainer);
-
-console.log(numberContainer);
-
-//.............
+// console.log(numberContainer);
 
 
-
-
-
-
-
-
-
+//............................
+//............................
 
 
 // Завдання 3:
