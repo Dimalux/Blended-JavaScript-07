@@ -489,6 +489,59 @@
 
 
 
+//...........
+
+
+// <form class="contact-form js-contact-form">
+// <input
+//  name="userName"
+//  type="text"
+//  class="contact-form-input js-username-input"
+//  data-length="8"
+//  placeholder="Your name"
+//  />
+//  <label class="js-policy-label">
+//  <input
+//  type="checkbox"
+//  name="accept"
+//  class="contact-form-checkbox js-policy-checkbox"
+//  />
+//  Я <span class="js-username-output">Anonymous</span> погоджуюсь із
+//  політикою конфіденційності
+//  </label>
+//  <button type="submit" class="contact-form-btn js-contact-form-submit">
+//  Відправити
+//  </button>
+//  </form>
+
+//..............
+
+// 1) При події `input`, якщо користувач ввів в поле більше 
+// 6 символів то додати клас `success`. Якщо ж символів менше аніж 6,
+// то клас `error` :
+
+
+
+const formInput = document.querySelector(".js-contact-form .js-username-input");
+
+formInput.addEventListener("input", handler);
+
+function handler(event) {
+console.log(event.target.value);
+
+}
+
+
+
+
+
+
+
+//.............................
+//.............................
+
+
+
 // Завдання 4:
 
  // Використовуй шаблон розмітки з файлу html та напиши наступний функціонал:
