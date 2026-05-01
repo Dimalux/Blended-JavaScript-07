@@ -465,11 +465,11 @@
 
 // 1) При події `input`, якщо користувач ввів в поле більше 6-ти символів то додати клас `success`. Якщо ж символів менше аніж 6-ть, то клас `error` :
 
-// 2 - При події `focus` зроби перевірку на пустоту поля інпута,
+// 2)  При події `focus` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
 // якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
 
-// 3 - При події `blur` зроби перевірку на пустоту поля інпута,
+// 3) При події `blur` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, 
 // якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
 
@@ -557,6 +557,22 @@ formInput.style.outline = "3px solid red";
 }
 
 //..............
+
+
+// 3) При події `blur` зроби перевірку на пустоту поля інпута,
+// якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, 
+// якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
+
+
+formInput.addEventListener("blur", handlerBlur);
+
+function handlerBlur(event) {
+    if(event.target.value === "") {
+formInput.style.outline = "3px solid red";
+    } else {
+        formInput.style.outline = "3px solid lime";
+    }
+}
 
 
 
