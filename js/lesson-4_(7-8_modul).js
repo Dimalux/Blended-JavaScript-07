@@ -516,9 +516,7 @@
 
 //..............
 
-// 1) При події `input`, якщо користувач ввів в поле більше 
-// 6 символів то додати клас `success`. Якщо ж символів менше аніж 6,
-// то клас `error` :
+// 1) При події `input`, якщо користувач ввів в поле більше 6-ти символів то додати клас `success`. Якщо ж символів менше аніж 6-ть, то клас `error` :
 
 
 
@@ -528,8 +526,23 @@ formInput.addEventListener("input", handler);
 
 function handler(event) {
 console.log(event.target.value);
+console.log(event.target.value.length);
 
+if(event.target.value.length < 6) {
+formInput.classList.add("error");
+formInput.classList.remove("success");
+} else {
+    formInput.classList.remove("error");
+    formInput.classList.add("success");
 }
+console.log(formInput.classList.contains("error"));
+console.log(formInput.classList.contains("success"));
+}
+
+//..............
+
+
+
 
 
 
