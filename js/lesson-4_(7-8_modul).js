@@ -517,12 +517,11 @@
 // 1) При події `input`, якщо користувач ввів в поле більше 6-ти символів то додати клас `success`. Якщо ж символів менше аніж 6-ть, то клас `error` :
 
 
-
 const formInput = document.querySelector(".js-contact-form .js-username-input");
 
-formInput.addEventListener("input", handler);
+formInput.addEventListener("input", handlerInput);
 
-function handler(event) {
+function handlerInput(event) {
 console.log(event.target.value);
 console.log(event.target.value.length);
 
@@ -575,9 +574,83 @@ formInput.style.outline = "3px solid red";
 }
 
 
+//..............
+
+
+// 4)  При події `submit`. Відміни поведінку браузера по змовчуванню.
+// Дістань данні з інпуту ;
+// Дістань данні з чек боксу;
+// Зроби перевірку, що інпут не порожній ; 
+
+// Зроби перевірку, що нажатий чек бокс у положення true ;
+
+// Якщо користувач все виконав вірно, збери данні (userName)
+// у обьект і виведи у консоль. У разі, якщо користувач не виконав
+// одну із умов, виведи повідомлення. Також при події інпут реалізуй додавання 
+// ім`я користувача у span, замість слова "Anonymous".
+// Якщо користувач ввів ім`я, а потім видалив, зроби так,
+// щоб на місце повернулось дефолтне знаяення "Anonymous".
+// При відправці форми, очисти інпут, верни чек бокс у положення 
+// false, верни дефолтне значення "Anonymous" у span.
 
 
 
+// <form class="contact-form js-contact-form">
+// <input
+//  name="userName"
+//  type="text"
+//  class="contact-form-input js-username-input"
+//  data-length="8"
+//  placeholder="Your name"
+//  />
+//  <label class="js-policy-label">
+//  <input
+//  type="checkbox"
+//  name="accept"
+//  class="contact-form-checkbox js-policy-checkbox"
+//  />
+//  Я <span class="js-username-output">Anonymous</span> погоджуюсь із
+//  політикою конфіденційності
+//  </label>
+//  <button type="submit" class="contact-form-btn js-contact-form-submit">
+//  Відправити
+//  </button>
+//  </form>
+
+
+const form = document.querySelector(".js-contact-form");
+
+console.log(form);
+
+form.addEventListener("submit", handlerForm);
+
+function handlerForm(event) {
+// При події `submit`. Відміни поведінку браузера по змовчуванню :
+event.preventDefault();
+console.log(event);
+
+// Дістаємо данні з інпуту :
+const dataInput = event.target.elements.userName.value;
+console.log("Значення інпуту:", dataInput);
+
+// Дістаємо данні з чек боксу :
+const dataCheckbox = event.target.elements.accept.value;
+console.log("Значення чекбоксу:", dataCheckbox);
+
+
+// Робимо перевірку, що інпут не порожній  (перевірка з обрізанням пробілів) : 
+
+// if(dataInput === "" && )
+
+
+  // ПРАВИЛЬНИЙ СПОСІБ: перевірка чи чекбокс відмічений :
+    const isCheckboxChecked = event.target.elements.accept.checked;
+    console.log("Чекбокс відмічений:", isCheckboxChecked);
+
+
+}
+
+// При події `submit`. Відміни поведінку браузера по змовчуванню :
 
 
 
