@@ -582,7 +582,7 @@ formInput.style.outline = "3px solid red";
 // Дістань данні з чек боксу;
 // Зроби перевірку, що інпут не порожній ; 
 
-// Зроби перевірку, що нажатий чек бокс у положення true ;
+// Зроби перевірку, що нажатий чек бокс у положення true (СТАН ЧЕКБОКСА - поставлена галочка) ;
 
 // Якщо користувач все виконав вірно, збери данні (userName)
 // у обьект і виведи у консоль. У разі, якщо користувач не виконав
@@ -637,13 +637,12 @@ console.log("Значення інпуту:", dataInput);
 const dataCheckbox = event.target.elements.accept.value;
 console.log("Значення чекбоксу:", dataCheckbox);
 
-
 // Робимо перевірку, що інпут не порожній  (перевірка з обрізанням пробілів) : 
+const dataInput2 = event.target.elements.userName.value.trim();
+const resultInput = dataInput2 === "" ? "Нічого не введено. Зробіть, будь ласка, запис!" : "OK";
+console.log(resultInput);
 
-// if(dataInput === "" && )
-
-
-  // ПРАВИЛЬНИЙ СПОСІБ: перевірка чи чекбокс відмічений :
+// Робимо перевірку, що чекбокс відмічений (СТАН ЧЕКБОКСА):
     const isCheckboxChecked = event.target.elements.accept.checked;
     console.log("Чекбокс відмічений:", isCheckboxChecked);
 
