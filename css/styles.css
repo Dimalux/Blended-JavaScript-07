@@ -146,3 +146,44 @@ span {
 }
 
 /* ..................... */
+
+
+
+/* Завдання 4 : */
+
+/* Стилі для квадрата */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Додаткові стилі для кнопок (опціонально) */
+.js-decrease,
+.js-increase {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.js-decrease:hover,
+.js-increase:hover {
+    background-color: #e67e22;
+}
+
+.js-decrease:active,
+.js-increase:active {
+    transform: scale(0.95);
+}
+
+/* ..................... */

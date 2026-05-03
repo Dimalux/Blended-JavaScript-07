@@ -662,17 +662,8 @@
 // }
  
 
-
-
-
-
-
-
-
-
 //.............................
 //.............................
-
 
 
 // Завдання 4:
@@ -681,9 +672,46 @@
  // При кліку на кнопку "Зменшити" квадрат стає меньшим на 20 пікселів, 
  // При кліку на кнопку "Збільшити" - квадрат стає більшим на 20 пікселів.
 
+//  <p class="task-title">Task 4</p>
+//  <div>
+//  <div class="square"></div>      //   квадрат
+//  <button class="js-decrease" id="decrease">Зменьшити</button>
+//  <button class="js-increase" id="increase">Збільшити</button>
+//  </div>
+//  </div>
 
 
-// Результат:
+
+const squareBox = document.querySelector(".square");
+const buttonDecrease = document.querySelector(".js-decrease");
+const buttonIncrease = document.querySelector(".js-increase");
+
+buttonDecrease.addEventListener("click", handlerButtonDecrease);
+buttonIncrease.addEventListener("click", handlerButtonIncrease);
+
+
+let currentWidth = 100;
+
+function handlerButtonDecrease(event) {
+
+   squareBox.style.width = (currentWidth + 10) + "px";
+    // squareBox.style.height = "100px";
+    // squareBox.style.backgroundColor = "#3463db"; 
+}
+
+function handlerButtonIncrease(event) {
+
+
+}
+
+
+
+
+//.............................
+//.............................
+
+
+// Завдання 5...:
 
 // У вас є ваш командний проєкт, який наповнюється, в ньому розв'язані задачі по 7-8 модулям, можливо навіть з кількома варіантами вирішення.
 // Код розміщений у репозиторії на GitHub, що забезпечить правильну організацію проєктів і домашніх завдань.
