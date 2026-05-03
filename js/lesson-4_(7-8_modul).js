@@ -473,15 +473,22 @@
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, 
 // якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
 
-// 4 - При події `submit`. Відміни поведінку браузера по змовчуванню.
-// Дістань данні з інпуту і чек боксу, зроби перевірку, 
-// що інпут не порожній, також, що нажатий чек бокс у положення true,
-// якщо користувач все виконав вірно, збери данні (userName)
+// 4)  При події `submit`. Відміни поведінку браузера по змовчуванню ;
+// 5)  Дістань данні з інпуту ;
+// 6)  Дістань данні з чек боксу;
+// 7) Зроби перевірку, що інпут не порожній ; 
+
+// 8) Зроби перевірку, що нажатий чек бокс у положення true (СТАН ЧЕКБОКСА - поставлена галочка) ;
+
+// 9) Якщо користувач все виконав вірно, збери данні (userName)
 // у обьект і виведи у консоль. У разі, якщо користувач не виконав
-// одну із умов, виведи повідомлення. Також при події інпут реалізуй додавання 
-// ім`я користувача у span, замість слова "Anonymous".
-// Якщо користувач ввів ім`я, а потім видалив, зроби так,
-// щоб на місце повернулось дефолтне знаяення "Anonymous".
+// одну із умов, виведи повідомлення "Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!" ; 
+ 
+// 10) Також при події інпут реалізуй додавання "ім`я користувача" у span, замість слова "Anonymous";
+
+// 11) Якщо користувач ввів ім`я, а потім видалив, зроби так, щоб на місце повернулось дефолтне знаяення "Anonymous";
+
+
 // При відправці форми, очисти інпут, верни чек бокс у положення 
 // false, верни дефолтне значення "Anonymous" у span.
 
@@ -516,16 +523,18 @@
 
 // 1) При події `input`, якщо користувач ввів в поле більше 6-ти символів то додати клас `success`. Якщо ж символів менше аніж 6-ть, то клас `error` :
 
-
 const formInput = document.querySelector(".js-contact-form .js-username-input");
 
 formInput.addEventListener("input", handlerInput);
 
 function handlerInput(event) {
-console.log(event.target.value);
-console.log(event.target.value.length);
 
-if(event.target.value.length < 6) {
+const userNameTextInput = event.target.value;
+
+console.log(userNameTextInput);
+console.log(userNameTextInput.length);
+
+if(userNameTextInput.length < 6) {
 formInput.classList.add("error");
 formInput.classList.remove("success");
 } else {
@@ -534,6 +543,26 @@ formInput.classList.remove("success");
 }
 console.log(formInput.classList.contains("error"));
 console.log(formInput.classList.contains("success"));
+
+// 10) При події інпут реалізуємо додавання ім`я користувача у span, замість слова "Anonymous" :
+
+// <label class="js-policy-label">
+// Я <span class="js-username-output">Anonymous</span> погоджуюсь із
+//  політикою конфіденційності
+//  </label>
+
+const userNameLabel = document.querySelector(".js-contact-form .js-policy-label .js-username-output");
+const userNameLabelText = userNameLabel.textContent;    //  Anonymous
+
+userNameLabel.textContent = userNameTextInput;
+
+console.log("LABEL :", userNameTextInput);
+
+
+
+
+
+
 }
 
 //..............
@@ -577,18 +606,18 @@ formInput.style.outline = "3px solid red";
 //..............
 
 
-// 4)  При події `submit`. Відміни поведінку браузера по змовчуванню.
-// Дістань данні з інпуту ;
-// Дістань данні з чек боксу;
-// Зроби перевірку, що інпут не порожній ; 
+// 4)  При події `submit`. Відміни поведінку браузера по змовчуванню ;
+// 5)  Дістань данні з інпуту ;
+// 6)  Дістань данні з чек боксу;
+// 7) Зроби перевірку, що інпут не порожній ; 
 
-// Зроби перевірку, що нажатий чек бокс у положення true (СТАН ЧЕКБОКСА - поставлена галочка) ;
+// 8) Зроби перевірку, що нажатий чек бокс у положення true (СТАН ЧЕКБОКСА - поставлена галочка) ;
 
-// Якщо користувач все виконав вірно, збери данні (userName)
+// 9) Якщо користувач все виконав вірно, збери данні (userName)
 // у обьект і виведи у консоль. У разі, якщо користувач не виконав
 // одну із умов, виведи повідомлення "Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!" : 
  
-// Також при події інпут реалізуй додавання 
+// 10) Також при події інпут реалізуй додавання 
 // ім`я користувача у span, замість слова "Anonymous".
 
 // Якщо користувач ввів ім`я, а потім видалив, зроби так,
@@ -628,29 +657,29 @@ console.log(form);
 form.addEventListener("submit", handlerForm);
 
 function handlerForm(event) {
-// При події `submit`. Відміни поведінку браузера по змовчуванню :
+// 4)  При події `submit`. Відміни поведінку браузера по змовчуванню :
 event.preventDefault();
 console.log(event);
 
-// Дістаємо данні з інпуту :
+// 5) Дістаємо данні з інпуту :
 const dataInput = event.target.elements.userName.value;
 console.log("Значення інпуту:", dataInput);
 
-// Дістаємо данні з чек боксу :
+// 6) Дістаємо данні з чек боксу :
 const dataCheckbox = event.target.elements.accept.value;
 console.log("Значення чекбоксу:", dataCheckbox);
 
-// Робимо перевірку, що інпут не порожній  (перевірка з обрізанням пробілів) : 
+// 7) Робимо перевірку, що інпут не порожній  (перевірка з обрізанням пробілів) : 
 const dataInput2 = event.target.elements.userName.value.trim();
 const resultInput = dataInput2 === "" ? "Нічого не введено. Зробіть, будь ласка, запис!" : "OK";
 console.log(resultInput);
 
-// Робимо перевірку, що чекбокс відмічений (СТАН ЧЕКБОКСА):
+// 8) Робимо перевірку, що чекбокс відмічений (СТАН ЧЕКБОКСА):
     const isCheckboxChecked = event.target.elements.accept.checked;
     console.log("Чекбокс відмічений:", isCheckboxChecked);
 
 
-// Якщо користувач все виконав вірно, збери данні (userName)
+// 9) Якщо користувач все виконав вірно, збери данні (userName)
 // у обьект і виведи у консоль. У разі, якщо користувач не виконав
 // одну із умов, виведи повідомлення "Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!" :
 if(dataInput2 !== "" && isCheckboxChecked) {
@@ -665,22 +694,6 @@ console.log(resultObj);
 
 }
  
-
-
-
-// Також при події інпут реалізуй додавання 
-// ім`я користувача у span, замість слова "Anonymous".
-
-
-// <input
-//  name="userName"
-//  type="text"
-//  class="contact-form-input js-username-input"
-//  data-length="8"
-//  placeholder="Your name"
-//  />
-
-
 
 
 
