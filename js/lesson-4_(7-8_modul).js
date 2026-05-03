@@ -489,8 +489,7 @@
 // 11) Якщо користувач ввів ім`я, а потім видалив, зроби так, щоб на місце повернулось дефолтне знаяення "Anonymous";
 
 
-// При відправці форми, очисти інпут, верни чек бокс у положення 
-// false, верни дефолтне значення "Anonymous" у span.
+// 12) При відправці форми, очисти "інпут", верни чек бокс у положення "false", верни дефолтне значення "Anonymous" у span.
 
 
 
@@ -523,179 +522,144 @@
 
 // 1) При події `input`, якщо користувач ввів в поле більше 6-ти символів то додати клас `success`. Якщо ж символів менше аніж 6-ть, то клас `error` :
 
-const formInput = document.querySelector(".js-contact-form .js-username-input");
+// const formInput = document.querySelector(".js-contact-form .js-username-input");
 
-formInput.addEventListener("input", handlerInput);
-
-function handlerInput(event) {
-
-const userNameTextInput = event.target.value;
-
-console.log(userNameTextInput);
-console.log(userNameTextInput.length);
-
-if(userNameTextInput.length < 6) {
-formInput.classList.add("error");
-formInput.classList.remove("success");
-} else {
-    formInput.classList.remove("error");
-    formInput.classList.add("success");
-}
-console.log(formInput.classList.contains("error"));
-console.log(formInput.classList.contains("success"));
-
-// 10) При події інпут реалізуємо додавання ім`я користувача у span, замість слова "Anonymous" :
-
-// <label class="js-policy-label">
-// Я <span class="js-username-output">Anonymous</span> погоджуюсь із
-//  політикою конфіденційності
-//  </label>
-
-const userNameLabel = document.querySelector(".js-contact-form .js-policy-label .js-username-output");
-const userNameLabelText = userNameLabel.textContent;    //  Anonymous
-
-userNameLabel.textContent = userNameTextInput;
-
-console.log("LABEL :", userNameTextInput);
-
-// 11) Якщо користувач ввів ім`я, а потім видалив, на місце МАЄ ПОВЕРТАТИСЯ дефолтне знаяення "Anonymous" :
-if(userNameTextInput === "") {
-userNameLabel.textContent = "Anonymous";   
-}
+// const userNameLabel = document.querySelector(".js-contact-form .js-policy-label .js-username-output");
+// const userNameLabelText = userNameLabel.textContent;    //  Anonymous
 
 
+// formInput.addEventListener("input", handlerInput);
+
+// function handlerInput(event) {
+
+// const userNameTextInput = event.target.value;
+
+// console.log(userNameTextInput);
+// console.log(userNameTextInput.length);
+
+// if(userNameTextInput.length < 6) {
+// formInput.classList.add("error");
+// formInput.classList.remove("success");
+// } else {
+//     formInput.classList.remove("error");
+//     formInput.classList.add("success");
+// }
+// console.log(formInput.classList.contains("error"));
+// console.log(formInput.classList.contains("success"));
+
+// // 10) При події інпут реалізуємо додавання ім`я користувача у span, замість слова "Anonymous" :
+
+// // <label class="js-policy-label">
+// // Я <span class="js-username-output">Anonymous</span> погоджуюсь із
+// //  політикою конфіденційності
+// //  </label>
+
+// // const userNameLabel = document.querySelector(".js-contact-form .js-policy-label .js-username-output");
+// // const userNameLabelText = userNameLabel.textContent;    //  Anonymous
+
+// userNameLabel.textContent = userNameTextInput;
+
+// console.log("LABEL :", userNameTextInput);
+
+// // 11) Якщо користувач ввів ім`я, а потім видалив, на місце МАЄ ПОВЕРТАТИСЯ дефолтне знаяення "Anonymous" :
+// if(userNameTextInput === "") {
+// userNameLabel.textContent = "Anonymous";   
+// }
+// }
+
+// //..............
 
 
-}
-
-//..............
-
-
-// 2)  При події `focus` зроби перевірку на пустоту поля інпута,
-// якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
-// якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
+// // 2)  При події `focus` зроби перевірку на пустоту поля інпута,
+// // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
+// // якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
 
 
-formInput.addEventListener("focus", handlerFocus);
+// formInput.addEventListener("focus", handlerFocus);
 
-function handlerFocus(event) {
+// function handlerFocus(event) {
 
-    if(event.target.value === "") {
-formInput.style.outline = "3px solid red";
-    } else {
-        formInput.style.outline = "3px solid green";
-    }
-}
+//     if(event.target.value === "") {
+// formInput.style.outline = "3px solid red";
+//     } else {
+//         formInput.style.outline = "3px solid green";
+//     }
+// }
 
-//..............
-
-
-// 3) При події `blur` зроби перевірку на пустоту поля інпута,
-// якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, 
-// якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
+// //..............
 
 
-formInput.addEventListener("blur", handlerBlur);
-
-function handlerBlur(event) {
-    if(event.target.value === "") {
-formInput.style.outline = "3px solid red";
-    } else {
-        formInput.style.outline = "3px solid lime";
-    }
-}
+// // 3) При події `blur` зроби перевірку на пустоту поля інпута,
+// // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, 
+// // якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
 
 
-//..............
+// formInput.addEventListener("blur", handlerBlur);
+
+// function handlerBlur(event) {
+//     if(event.target.value === "") {
+// formInput.style.outline = "3px solid red";
+//     } else {
+//         formInput.style.outline = "3px solid lime";
+//     }
+// }
 
 
-// 4)  При події `submit`. Відміни поведінку браузера по змовчуванню ;
-// 5)  Дістань данні з інпуту ;
-// 6)  Дістань данні з чек боксу;
-// 7) Зроби перевірку, що інпут не порожній ; 
+// const form = document.querySelector(".js-contact-form");
 
-// 8) Зроби перевірку, що нажатий чек бокс у положення true (СТАН ЧЕКБОКСА - поставлена галочка) ;
+// console.log(form);
 
-// 9) Якщо користувач все виконав вірно, збери данні (userName)
-// у обьект і виведи у консоль. У разі, якщо користувач не виконав
-// одну із умов, виведи повідомлення "Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!" : 
- 
-// 10) Також при події інпут реалізуй додавання 
-// ім`я користувача у span, замість слова "Anonymous".
+// form.addEventListener("submit", handlerForm);
 
-// Якщо користувач ввів ім`я, а потім видалив, зроби так,
-// щоб на місце повернулось дефолтне знаяення "Anonymous".
-// При відправці форми, очисти інпут, верни чек бокс у положення 
-// false, верни дефолтне значення "Anonymous" у span.
+// function handlerForm(event) {
+// // 4)  При події `submit`. Відміни поведінку браузера по змовчуванню :
+// event.preventDefault();
+// console.log(event);
 
+// // 5) Дістаємо данні з інпуту :
+// const dataInput = event.target.elements.userName.value;
+// console.log("Значення інпуту:", dataInput);
 
+// // 6) Дістаємо данні з чек боксу :
+// const dataCheckbox = event.target.elements.accept.value;
+// console.log("Значення чекбоксу:", dataCheckbox);
 
-// <form class="contact-form js-contact-form">
-// <input
-//  name="userName"
-//  type="text"
-//  class="contact-form-input js-username-input"
-//  data-length="8"
-//  placeholder="Your name"
-//  />
-//  <label class="js-policy-label">
-//  <input
-//  type="checkbox"
-//  name="accept"
-//  class="contact-form-checkbox js-policy-checkbox"
-//  />
-//  Я <span class="js-username-output">Anonymous</span> погоджуюсь із
-//  політикою конфіденційності
-//  </label>
-//  <button type="submit" class="contact-form-btn js-contact-form-submit">
-//  Відправити
-//  </button>
-//  </form>
+// // 7) Робимо перевірку, що інпут не порожній  (перевірка з обрізанням пробілів) : 
+// const dataInput2 = event.target.elements.userName.value.trim();
+// const resultInput = dataInput2 === "" ? "Нічого не введено. Зробіть, будь ласка, запис!" : "OK";
+// console.log(resultInput);
+
+// // 8) Робимо перевірку, що чекбокс відмічений (СТАН ЧЕКБОКСА):
+//     const isCheckboxChecked = event.target.elements.accept.checked;
+//     console.log("Чекбокс відмічений:", isCheckboxChecked);
 
 
-const form = document.querySelector(".js-contact-form");
-
-console.log(form);
-
-form.addEventListener("submit", handlerForm);
-
-function handlerForm(event) {
-// 4)  При події `submit`. Відміни поведінку браузера по змовчуванню :
-event.preventDefault();
-console.log(event);
-
-// 5) Дістаємо данні з інпуту :
-const dataInput = event.target.elements.userName.value;
-console.log("Значення інпуту:", dataInput);
-
-// 6) Дістаємо данні з чек боксу :
-const dataCheckbox = event.target.elements.accept.value;
-console.log("Значення чекбоксу:", dataCheckbox);
-
-// 7) Робимо перевірку, що інпут не порожній  (перевірка з обрізанням пробілів) : 
-const dataInput2 = event.target.elements.userName.value.trim();
-const resultInput = dataInput2 === "" ? "Нічого не введено. Зробіть, будь ласка, запис!" : "OK";
-console.log(resultInput);
-
-// 8) Робимо перевірку, що чекбокс відмічений (СТАН ЧЕКБОКСА):
-    const isCheckboxChecked = event.target.elements.accept.checked;
-    console.log("Чекбокс відмічений:", isCheckboxChecked);
+// // 9) Якщо користувач все виконав вірно, збери данні (userName)
+// // у обьект і виведи у консоль. У разі, якщо користувач не виконав
+// // одну із умов, виведи повідомлення "Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!" :
+// if(dataInput2 !== "" && isCheckboxChecked) {
+// const resultObj = {
+// userName: dataInput2,
+// };
+// console.log(resultObj);
+// } else {
+//     alert("Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!");
+// }
 
 
-// 9) Якщо користувач все виконав вірно, збери данні (userName)
-// у обьект і виведи у консоль. У разі, якщо користувач не виконав
-// одну із умов, виведи повідомлення "Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!" :
-if(dataInput2 !== "" && isCheckboxChecked) {
-const resultObj = {
-userName: dataInput2,
-};
-console.log(resultObj);
-} else {
-    alert("Будь ласка ЗАПОВНІТЬ ВСІ ПОЛЯ !!!");
-}
+// // 12) При відправці форми, очисти інпут, верни чек бокс у положення 
+// // false, верни дефолтне значення "Anonymous" у span :
+
+// // const dataInput = event.target.elements.userName.value;
 
 
-}
+// // Очищає ВСІ поля форми через reset() :
+// event.target.reset();   
+
+// //  Повертаємо дефолтне значення "Anonymous" у span :
+// userNameLabel.textContent = "Anonymous";   
+
+// }
  
 
 
