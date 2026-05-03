@@ -558,7 +558,10 @@ userNameLabel.textContent = userNameTextInput;
 
 console.log("LABEL :", userNameTextInput);
 
-
+// 11) Якщо користувач ввів ім`я, а потім видалив, на місце МАЄ ПОВЕРТАТИСЯ дефолтне знаяення "Anonymous" :
+if(userNameTextInput === "") {
+userNameLabel.textContent = "Anonymous";   
+}
 
 
 
