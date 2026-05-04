@@ -672,37 +672,43 @@
  // При кліку на кнопку "Зменшити" квадрат стає меньшим на 20 пікселів, 
  // При кліку на кнопку "Збільшити" - квадрат стає більшим на 20 пікселів.
 
-//  <p class="task-title">Task 4</p>
-//  <div>
-//  <div class="square"></div>      //   квадрат
-//  <button class="js-decrease" id="decrease">Зменьшити</button>
-//  <button class="js-increase" id="increase">Збільшити</button>
-//  </div>
-//  </div>
+// //  <p class="task-title">Task 4</p>
+// //  <div>
+// //  <div class="square"></div>      //   квадрат
+// //  <button class="js-decrease" id="decrease">Зменьшити</button>
+// //  <button class="js-increase" id="increase">Збільшити</button>
+// //  </div>
+// //  </div>
 
 
+// const squareBox = document.querySelector(".box");
+// const buttonDecrease = document.querySelector(".js-decrease");
+// const buttonIncrease = document.querySelector(".js-increase");
 
-const squareBox = document.querySelector(".square");
-const buttonDecrease = document.querySelector(".js-decrease");
-const buttonIncrease = document.querySelector(".js-increase");
+// buttonDecrease.addEventListener("click", handlerButtonDecrease);
+// buttonIncrease.addEventListener("click", handlerButtonIncrease);
 
-buttonDecrease.addEventListener("click", handlerButtonDecrease);
-buttonIncrease.addEventListener("click", handlerButtonIncrease);
+// // Початковий розмір :
+// let currentSize = 100;
 
-
-let currentWidth = 100;
-
-function handlerButtonDecrease(event) {
-
-   squareBox.style.width = (currentWidth + 10) + "px";
-    // squareBox.style.height = "100px";
-    // squareBox.style.backgroundColor = "#3463db"; 
-}
-
-function handlerButtonIncrease(event) {
+// //  Інлайн-стиль має вищий пріоритет!!! Інлайн-стиль, встановлений через JavaScript, перевизначить CSS-стиль :
+// squareBox.style.width = currentSize + "px";
+// squareBox.style.height = currentSize + "px";
 
 
-}
+// function handlerButtonDecrease(event) {
+//     currentSize -= 20; 
+//     console.log(currentSize);
+//     squareBox.style.width = currentSize + "px";
+// squareBox.style.height = currentSize + "px";
+// }
+
+// function handlerButtonIncrease(event) {
+//     currentSize += 20; 
+//     console.log(currentSize);
+//     squareBox.style.width = currentSize + "px";
+// squareBox.style.height = currentSize + "px";
+// }
 
 
 
