@@ -820,6 +820,14 @@
 // }
 
 
+
+//.............................
+//.............................
+
+
+
+// Завдання 5: 
+
 // Створи перелік справ.
 // Є інпут, який вводиться назва завдання.
 // Після натискання на кнопку "Додати" завдання додається до списку #task-list.
@@ -827,62 +835,69 @@
 // Забрати завдання зі списку.
 // Список із завданнями має бути доступним після перезавантаження сторінки.
 
-// ЗАДАЧА  
+
 
     // <form id="task-form">
-    //   <input type="text" name="taskName" />
+    //   <input type="text" name="taskName"  placeholder="Нове завдання" />
     //   <button type="submit">Додати</button>
     // </form>
 
     // <ul id="task-list"></ul>
 
 
+const formTask = document.querySelector("#task-form");
+const listTask = document.querySelector("#task-list");
+
+
+
+console.log(formTask);
+console.log(listTask);
+
+
+formTask.addEventListener("submit", handlerFormTask);
+
+function handlerFormTask(event) {
+event.preventDefault();
+console.log("OK");
+
+//  Отримуємо завдання яке ввів користувач :
+const taskAdd = event.target.elements.taskName.value.trim();
+console.log(taskAdd);
+
+if(taskAdd === "") {
+alert("Не має данних!!! Будь ласка заповніть поле для завданнь!");
+return;
+}
+
+listTask.insertAdjacentHTML("afterbegin", `<li class="list-button">${taskAdd} <button type="button" class="delete-btn">Видалити</button></li>`);
+
+
+// Знаходимо щойно створену кнопку :
+
+const listTaskNew = document.querySelector(".list-button");
+const deleteBtn = document.querySelector(".delete-btn");
+
+// Додаємо обробник
+deleteBtn.addEventListener("click", () => {
+    listTaskNew.remove();
+    console.log("Видалено:", taskAdd);
+});
 
     
 
+
+button.addEventListener("click", handlerDelete);
+
+function handlerDelete(event) {
+    // listTask.remove();
+    console.log("Delete");
     
-    
-    
-    //   ......................  ФАЙЛ   index5.html
-    //   ......................
-
-// <!DOCTYPE html>
-// <html lang="en">
-//   <head>
-//     <meta charset="UTF-8" />
-//     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-//     <title>Page 2</title>
-//     <link rel="stylesheet" href="./css/styles.css" />
-
-//     <!-- <script src="./js/lesson-4.js" defer></script> -->
-//   </head>
-//   <body>
+}
 
 
-//  <a class="back-link" href="./index.html">Go back</a>
+// Очищає ВСІ поля форми через reset() :
+event.target.reset();   
 
-// <!-- / Зробити перемикач теми. Зберігати тему у локальному сховище.
-// // При перезавантаженні сторінки перевіряти сховище та ставити тему, яка там вказана.
-// // Додати класи для змін тем -->
-
-    
-
-// <h1 class="title">Список тасок</h1>
-//     <p class="text">Вітаємо в вашим списочку</p>
-  
-
-//         <div class="checkbox-thumb">
-//       <input type="checkbox" id="checkbox" class="checkbox" />
-//       <label class="theme-toggle" for="checkbox"></label>
-//       <div class="checkbox-circle"></div>
-   
-
-// <script type="module" src="./js/lesson-5.js" defer></script>
-
-//   </body>
-// </html>
+}
 
 
-
-//   ......................
