@@ -816,14 +816,11 @@
 // body.classList.add("dark");
 // body.classList.remove("light");
 //     }
-
 // }
 
 
-
 //.............................
 //.............................
-
 
 
 // Завдання 5: 
@@ -836,68 +833,56 @@
 // Список із завданнями має бути доступним після перезавантаження сторінки.
 
 
+//     // <form id="task-form">
+//     //   <input type="text" name="taskName"  placeholder="Нове завдання" />
+//     //   <button type="submit">Додати</button>
+//     // </form>
 
-    // <form id="task-form">
-    //   <input type="text" name="taskName"  placeholder="Нове завдання" />
-    //   <button type="submit">Додати</button>
-    // </form>
-
-    // <ul id="task-list"></ul>
-
-
-const formTask = document.querySelector("#task-form");
-const listTask = document.querySelector("#task-list");
+//     // <ul id="task-list"></ul>
 
 
+// const formTask = document.querySelector("#task-form");
+// const listTask = document.querySelector("#task-list");
 
-console.log(formTask);
-console.log(listTask);
+// // Додаємо обробник на форму :
+// formTask.addEventListener("submit", handlerFormTask);
 
+// function handlerFormTask(event) {
+// event.preventDefault();
+// console.log("OK");
 
-formTask.addEventListener("submit", handlerFormTask);
+// //  Отримуємо завдання яке ввів користувач :
+// const taskAdd = event.target.elements.taskName.value.trim();
+// console.log(taskAdd);
 
-function handlerFormTask(event) {
-event.preventDefault();
-console.log("OK");
+// if(taskAdd === "") {
+// alert("Не має данних!!! Будь ласка заповніть поле для завданнь!");
+// return;
+// }
 
-//  Отримуємо завдання яке ввів користувач :
-const taskAdd = event.target.elements.taskName.value.trim();
-console.log(taskAdd);
-
-if(taskAdd === "") {
-alert("Не має данних!!! Будь ласка заповніть поле для завданнь!");
-return;
-}
-
-listTask.insertAdjacentHTML("afterbegin", `<li class="list-button">${taskAdd} <button type="button" class="delete-btn">Видалити</button></li>`);
-
-
-// Знаходимо щойно створену кнопку :
-
-const listTaskNew = document.querySelector(".list-button");
-const deleteBtn = document.querySelector(".delete-btn");
-
-// Додаємо обробник
-deleteBtn.addEventListener("click", () => {
-    listTaskNew.remove();
-    console.log("Видалено:", taskAdd);
-});
-
-    
+// listTask.insertAdjacentHTML("afterbegin", `<li class="list-button">${taskAdd} <button type="button" class="delete-btn">Видалити</button></li>`);
 
 
-button.addEventListener("click", handlerDelete);
+// // Знаходимо щойно створену "li" з новим завданням "taskAdd" і кнопкою "Видалити" :
+// const listTaskNew = document.querySelector(".list-button");
+// const deleteBtn = document.querySelector(".delete-btn");
 
-function handlerDelete(event) {
-    // listTask.remove();
-    console.log("Delete");
-    
-}
+// // Додаємо обробник на кнопку "Видалити" :
+// deleteBtn.addEventListener("click", () => {
+//     listTaskNew.remove();
+//     console.log("Видалено:", taskAdd);
+// });    
+
+// // Очищає ВСІ поля форми через reset() :
+// event.target.reset();  
+// }
+
+// Список із завданнями має бути доступним після перезавантаження сторінки :
+
+//    !!!!!!!!!     Проблема в тому, що ви не зберігаєте завдання в localStorage. Після перезавантаження сторінки всі дані, додані через JavaScript, зникають, тому що вони існують тільки в пам'яті браузера під час поточної сесії.
 
 
-// Очищає ВСІ поля форми через reset() :
-event.target.reset();   
 
-}
-
+//.............................
+//.............................
 
