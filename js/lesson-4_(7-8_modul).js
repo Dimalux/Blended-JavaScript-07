@@ -891,25 +891,44 @@
 // <!--- ЗАДАЧА 1 --->  (Урок 00:20:00)
 // Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивиться на елементи в html-розмітці)
 
-// <div>
-//     <h2 class="taskTitle">ЗАДАЧА 1</h2>
-//     <button id="alertButton">SHOW ME</button>
-//     <input id="alertInput" type="text" />
-// </div>
+// // <div>
+// //     <h2 class="taskTitle">ЗАДАЧА 1</h2>
+// //     <button id="alertButton">SHOW ME</button>
+// //     <input id="alertInput" type="text" />
+// // </div>
 
-const btnClick = document.querySelector("#alertButton");
-const input = document.querySelector("#alertInput");
+// const btnClick = document.querySelector("#alertButton");
+// const input = document.querySelector("#alertInput");
 
-console.log(input);
+// console.log(input);
+
+// //............
+
+// // Варіант-1 (ОБРОБНИК - зовнішня іменована функція) :
+// // btnClick.addEventListener("click", handlerBtnCLick);
+
+// // function handlerBtnCLick(event) {
+
+// // // input - це DOM-елемент, який має властивість value." input.value" - містить те, що ввів користувач (Слухач подій на input потрібен, коли ви хочете реагувати в реальному часі на кожен символ, який вводить користувач. А "input.value" - це просто поточне значення в будь-який момент) :
+// // console.log(input.value.trim());   //  можна виводити в консоль
+// // alert(input.value.trim());         //  можна вивести повідомлення на сторінку браузера
+// // }
+
+// //............
+
+// // Варіант-2 (ОБРОБНИК - колбек стрілка) :
+// btnClick.addEventListener("click", () => console.log(input.value.trim()));
 
 
-btnClick.addEventListener("click", handlerBtnCLick);
 
-function handlerBtnCLick(event) {
+//.............................
+//.............................
 
-// input - це DOM-елемент, який має властивість value. input.value - містить те, що ввів користувач (Слухач подій на input потрібен, коли ви хочете реагувати в реальному часі на кожен символ, який вводить користувач. А input.value - це просто поточне значення в будь-який момент) :
-console.log(input.value.trim());
-}
+
+// Завдання 7 (ментор Ivan Sinabdeev) : 
+// <!--- ЗАДАЧА 1 --->  (Урок 00:20:00)
+
+
 
 
 //  (.... 00:22:40)
