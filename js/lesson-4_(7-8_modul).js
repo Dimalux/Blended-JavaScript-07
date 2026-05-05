@@ -925,8 +925,55 @@
 //.............................
 
 
+//  (!!! ПЕРЕДИВИСЬ 00:30:40)
+
+
+
 // Завдання 7 (ментор Ivan Sinabdeev) : 
-// <!--- ЗАДАЧА 1 --->  (Урок 00:20:00)
+// <!--- ЗАДАЧА 2 --->  (Урок 00:38:00)
+
+// Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома імпутами.
+// Ви можете натиснути на неї кілька разів або вручну змінити вміст імпутів.
+
+// // <div>
+// // <h2 class="taskTitle">Задача 2</h2>
+// // <button id="swapButton">SWAP ME</button>
+// // <input id="leftSwapInput" type="text" value="???">
+// // <input id="rightSwapInput" type="text" value="!!!"/>
+// // </div>
+
+// const buttonShap = document.querySelector("#swapButton");
+// console.log(buttonShap);
+
+// const inputLeft = document.querySelector("#leftSwapInput");
+// console.log(inputLeft);
+
+// const inputRight = document.querySelector("#rightSwapInput");
+// console.log(inputRight);
+
+// buttonShap.addEventListener("click", handlerButtonShap);
+
+// // Варіант-1 (МІЙ - через масив) :
+// function handlerButtonShap(event) {
+// const inputValue = [];
+// inputValue.push(inputLeft.value);
+// inputValue.push(inputRight.value);
+
+// inputLeft.value = inputValue[1];
+// inputRight.value = inputValue[0];
+// }
+
+// // // Варіант-2 (чат GPT - через один посередник "temp") :
+// // function handlerButtonShap(event) {
+// //     const temp = inputLeft.value;
+// //     inputLeft.value = inputRight.value;
+// //     inputRight.value = temp;
+// // }
+
+
+
+
+
 
 
 
