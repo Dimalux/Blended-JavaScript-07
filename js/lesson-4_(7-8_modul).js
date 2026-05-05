@@ -892,7 +892,7 @@
 // Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивиться на елементи в html-розмітці)
 
 // // <div>
-// //     <h2 class="taskTitle">ЗАДАЧА 1</h2>
+// //     <h2 class="taskTitle">Задача 1</h2>
 // //     <button id="alertButton">SHOW ME</button>
 // //     <input id="alertInput" type="text" />
 // // </div>
@@ -920,13 +920,8 @@
 // btnClick.addEventListener("click", () => console.log(input.value.trim()));
 
 
-
 //.............................
 //.............................
-
-
-//  (!!! ПЕРЕДИВИСЬ 00:30:40)
-
 
 
 // Завдання 7 (ментор Ivan Sinabdeev) : 
@@ -972,10 +967,67 @@
 
 
 
+//.............................
+//.............................
+
+
+// Завдання 8 (ментор Ivan Sinabdeev) : 
+// <!--- ЗАДАЧА 3 --->  (Урок 01:00:00)
+
+// При клику на кнопку текст параграфов змінюється на їх порядковый номер :
+
+// <h2>Задача 3</h2>
+// <p class="text-change">Перший абзац</p>
+// <p class="text-change">Другий абзац</p>
+// <p class="text-change">Третій абзац</p>
+// <button id="changeText">Change</button>
+
+const textChange = document.querySelectorAll(".text-change");
+console.log(textChange);
+
+const buttonChange = document.querySelector("#changeText");
+console.log(buttonChange);
+
+buttonChange.addEventListener("click", handlerButtonChange);
+
+//............
+
+// Варіант-1 (МІЙ -  метод MAP) :
+// function handlerButtonChange(event) {
+// [...textChange].map((item, index) => item.textContent = index + 1);
+
+// // !!! ПОЯСНЕННЯ: хоча метод "map" повертає новий масив і не змінює вихідний масив "textChange", текст в оригінальних тегах <p> змінився тому що "item" - це не значення в масиві, а ПОСИЛАННЯ на реальний DOM-елемент!
+// }
+
+//............
+
+// Варіант-2 (чат GPT - метод forEach) : 
+// !!! ПОЯСНЕННЯ:  метод forEach(callback) — це метод перебирання масиву, який використовується для заміни циклів for і for...of в роботі з колекцією :
+
+// array.forEach(function callback(element, index, array) {
+//   // Тіло колбек-функції
+// });
+
+// Поелементно перебирає масив array;
+// Викликає колбек-функцію для кожного елемента масиву;
+// Повертає undefined, навіть якщо явно задати вираз після return.
+
+function handlerButtonChange(event) {
+    textChange.forEach((item, index) => {
+        item.textContent = index + 1;
+    });
+}
+
+
+
+
+//.............................
+//.............................
 
 
 
 
 
+//  (!!! ПЕРЕДИВИСЬ 00:30:40)
 
 //  (.... 00:22:40)
