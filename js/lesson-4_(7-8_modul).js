@@ -990,9 +990,9 @@
 
 // buttonChange.addEventListener("click", handlerButtonChange);
 
-// //............
+// // //............
 
-// // Варіант-1 (МІЙ -  метод MAP) :
+// // // Варіант-1 (МІЙ -  метод MAP) :
 // function handlerButtonChange(event) {
 // [...textChange].map((item, index) => item.textContent = index + 1);
 // }
@@ -1004,7 +1004,29 @@
 // Браузер створює DOM-елементи в пам'яті.
 // Коли браузер читає HTML, він створює об'єкти
 // Кожен <p class="text-change"> — це ОКРЕМИЙ об'єкт в пам'яті
-// querySelectorAll повертає NodeList (НЕ масив!).
+
+
+//......
+
+// querySelectorAll повертає NodeList НЕ масив!- це псевдомасив, якщо в консолі відкрити Prototype / NodeList, то можна побачити які методи доступні замовчуванням :
+
+// NodeList(3) [p.text-change, p.text-change, p.text-change]
+// 0: p.text-change 
+// 1: p.text-change
+// 2: p.text-change
+// length: 3
+// [[Prototype]]: NodeList
+// entries
+// forEach     -  ДОСТУПНИЙ  !!!!
+// item
+// keys
+// length
+// values
+
+// !!!!!! Код працює тому, що ви розгорнули NodeList у справжній масив за допомогою [...textChange] !!!!!!
+
+//......
+
 
 // DOM-елементи — це складний тип даних (об'єкти). Коли ви копіюєте масив, ви копіюєте посилання на ті самі об'єкти. Тому зміни через будь-яке посилання змінюють оригінальний DOM-елемент на сторінці.
 //     const textChange = document.querySelectorAll(".text-change");
@@ -1026,7 +1048,6 @@
 // console.log(newArray[0] === textChange[0]); // true (той самий елемент!)
 
 // !!!  Тобто "querySelector" і "querySelectorAll" завжди повертають ПОСИЛАННЯ на реальні DOM-елементи. Вони ніколи не копіюють елементи, а завжди повертають посилання на оригінальні об'єкти в пам'яті браузера.
-
 
 
 //............
