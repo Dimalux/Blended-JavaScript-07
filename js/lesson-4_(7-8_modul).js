@@ -982,22 +982,49 @@
 // <p class="text-change">Третій абзац</p>
 // <button id="changeText">Change</button>
 
-const textChange = document.querySelectorAll(".text-change");
-console.log(textChange);
+// const textChange = document.querySelectorAll(".text-change");
+// console.log(textChange);
 
-const buttonChange = document.querySelector("#changeText");
-console.log(buttonChange);
+// const buttonChange = document.querySelector("#changeText");
+// console.log(buttonChange);
 
-buttonChange.addEventListener("click", handlerButtonChange);
+// buttonChange.addEventListener("click", handlerButtonChange);
 
-//............
+// //............
 
-// Варіант-1 (МІЙ -  метод MAP) :
+// // Варіант-1 (МІЙ -  метод MAP) :
 // function handlerButtonChange(event) {
 // [...textChange].map((item, index) => item.textContent = index + 1);
-
-// // !!! ПОЯСНЕННЯ: хоча метод "map" повертає новий масив і не змінює вихідний масив "textChange", текст в оригінальних тегах <p> змінився тому що "item" - це не значення в масиві, а ПОСИЛАННЯ на реальний DOM-елемент!
 // }
+
+//...............
+
+// !!! ПОЯСНЕННЯ: хоча метод "map" повертає новий масив і не змінює вихідний масив "textChange", текст в оригінальних тегах <p> змінився тому що "item" - це не значення в масиві, а ПОСИЛАННЯ на реальний DOM-елемент!
+
+// Браузер створює DOM-елементи в пам'яті.
+// Коли браузер читає HTML, він створює об'єкти
+// Кожен <p class="text-change"> — це ОКРЕМИЙ об'єкт в пам'яті
+// querySelectorAll повертає NodeList (НЕ масив!).
+
+// DOM-елементи — це складний тип даних (об'єкти). Коли ви копіюєте масив, ви копіюєте посилання на ті самі об'єкти. Тому зміни через будь-яке посилання змінюють оригінальний DOM-елемент на сторінці.
+//     const textChange = document.querySelectorAll(".text-change");
+//     // textChange — це NodeList (спеціальна колекція)
+//     // Вона МІСТИТЬ ПОСИЛАННЯ на DOM-елементи
+//     textChange = [посилання_на_p1, посилання_на_p2, посилання_на_p3]
+
+//     const textChange = document.querySelectorAll(".text-change");
+//     // textChange — це NodeList (спеціальна колекція)
+//     // Вона МІСТИТЬ ПОСИЛАННЯ на DOM-елементи
+//     textChange = [посилання_на_p1, посилання_на_p2, посилання_на_p3]
+
+// [...textChange] створює НОВИЙ масив :
+// const newArray = [...textChange];
+// //  Це дійсно НОВИЙ масив!
+// //  Але він містить ТІ САМІ ПОСИЛАННЯ на елементи
+
+// console.log(newArray === textChange); // false (різні масиви!)
+// console.log(newArray[0] === textChange[0]); // true (той самий елемент!)
+
 
 //............
 
@@ -1012,11 +1039,11 @@ buttonChange.addEventListener("click", handlerButtonChange);
 // Викликає колбек-функцію для кожного елемента масиву;
 // Повертає undefined, навіть якщо явно задати вираз після return.
 
-function handlerButtonChange(event) {
-    textChange.forEach((item, index) => {
-        item.textContent = index + 1;
-    });
-}
+// function handlerButtonChange(event) {
+//     textChange.forEach((item, index) => {
+//         item.textContent = index + 1;
+//     });
+// }
 
 
 
