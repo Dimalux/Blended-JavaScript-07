@@ -1077,8 +1077,50 @@
 
 
 // Завдання 9 (ментор Ivan Sinabdeev) : 
-// <!--- ЗАДАЧА 4 --->  (Урок 01:00:00)
+// <!--- ЗАДАЧА 4 --->  (Урок 01:40:00)
 
+// Кнопка "Приховати" ховає текст і замінює назву кнопки на
+// "Розкрити", при повторному натисканні текст знову стає
+// доступним і кнопка набуває початкового вигляду.
+
+// // <div>
+// //     <h2 class="taskTitle">Задача 4</h2>
+// //     <input id="passwordInput" type="text" />
+// //     <button id="passwordButton">Приховати</button>
+// // </div>
+
+// const textInputChange = document.querySelector("#passwordInput");
+// textInputChange.addEventListener("input", handlertextInpChange)
+
+// let oldText = "";
+
+// function handlertextInpChange(event) {
+    
+//     // Варіант-1 (textInputChange.value) :
+//     oldText = textInputChange.value;
+
+//     // Варіант-2 (event.target.value) :
+//     // oldText = event.target.value;
+       
+//     console.log(oldText);    
+// }
+
+
+// const buttonInputChange = document.querySelector("#passwordButton");
+// console.log(buttonInputChange);
+
+// buttonInputChange.addEventListener("click", handlerButInputChange);
+
+// function handlerButInputChange(event) {
+
+// if(textInputChange.value !== "") {
+// textInputChange.value = "";
+// buttonInputChange.textContent = "Розкрити";
+// } else {
+// textInputChange.value = oldText;
+// buttonInputChange.textContent = "Приховати";
+// }
+// }
 
 
 
