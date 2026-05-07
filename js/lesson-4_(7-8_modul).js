@@ -1345,50 +1345,33 @@
 // offsetWidth: 50
 
 
-const btnDec = document.querySelector("#decrease");
-const btnInc = document.querySelector("#increase");
-const boxEl = document.querySelector("#box");
-console.dir(boxEl);
+// const btnDec = document.querySelector("#decrease");
+// const btnInc = document.querySelector("#increase");
+// const boxEl = document.querySelector("#box");
+// console.dir(boxEl);
 
-btnDec.addEventListener("click", changeBtnSize);
-btnInc.addEventListener("click", changeBtnSize);
+// btnDec.addEventListener("click", changeBtnSize);
+// btnInc.addEventListener("click", changeBtnSize);
 
-function changeBtnSize(event) {
-    const width = boxEl.offsetWidth;
-    const height = boxEl.offsetHeight;
-    const currentBtn = event.target.getAttribute("id");
+// function changeBtnSize(event) {
+//     const width = boxEl.offsetWidth;
+//     const height = boxEl.offsetHeight;
+//     const currentBtn = event.target.getAttribute("id");
 
-    console.log("! ~ changeBtnSize ~ currentBtn:", currentBtn);
+//     console.log("! ~ changeBtnSize ~ currentBtn:", currentBtn);
 
-    switch (currentBtn) {
-    case "decrease":
-    boxEl.style.width = `${width - 10}px`;
-    boxEl.style.height = `${height - 10}px`;
-    break;
+//     switch (currentBtn) {
+//     case "decrease":
+//     boxEl.style.width = `${width - 10}px`;
+//     boxEl.style.height = `${height - 10}px`;
+//     break;
 
-    case "increase":
-    boxEl.style.width = `${width + 10}px`;
-    boxEl.style.height = `${height + 10}px`;
-    break;
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     case "increase":
+//     boxEl.style.width = `${width + 10}px`;
+//     boxEl.style.height = `${height + 10}px`;
+//     break;
+// }
+// }
 
 
 
@@ -1397,17 +1380,13 @@ function changeBtnSize(event) {
 
 
 // Завдання 11 (ментор Ivan Sinabdeev) : 
-// <!--- ЗАДАЧА 6 --->  (Урок 02:29:50)      (повтор... рядок 669)
+// <!--- ЗАДАЧА 6 --->  (Урок 02:48:38)     
 
 
-
-
-
-// Натиснувши кнопку "Подвоювати", збільшити значення
-// у кожному елементі списку у 2 рази
+// Натиснувши кнопку "Подвоювати", збільшити значення у кожному елементі списку у 2 рази :
 
 // <!-- ЗАДАЧА 6 -->
-// <h2 class="taskTitle">ЗАДАЧА 6</h2>
+// <h2 class="taskTitle">Задача 6</h2>
 // <div class="container">
 // <ul class="list">
 // <li class="listItem item-1">1</li>
@@ -1422,15 +1401,15 @@ function changeBtnSize(event) {
 // </div>
 
 
+// ВАРІАНТ-3 (МІЙ) :
+// const listItemEl = document.querySelectorAll(".listItem");  //  псевдомасив NodeList
+// console.log(listItemEl);     //    NodeList(7) [li.listItem.item-1, li.listItem.item-2, li.listItem.item-3, li.listItem.item-4, li.listItem.item-5, li.listItem.item-6, li.listItem.item-7]
 
+// const btnListEl = document.querySelector("#double");
 
+// btnListEl.addEventListener("click", handlerButton);
 
+// function handlerButton(event) {
+// listItemEl.forEach(item => item.textContent = Number(item.textContent) * 2);
+// }
 
-
-
-
-
-
-//  (!!! ПЕРЕДИВИСЬ 00:30:40)
-
-//  (.... 01:40:00)
