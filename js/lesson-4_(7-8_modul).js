@@ -1089,17 +1089,26 @@
 // //     <button id="passwordButton">Приховати</button>
 // // </div>
 
+//........
+
+
+// // ВАРІАНТ-1 (ОЧИЩЯЄМО поле "input" при натисканні на кнопку "Приховати") :
+
 // const textInputChange = document.querySelector("#passwordInput");
 // textInputChange.addEventListener("input", handlertextInpChange)
+
+// console.log(textInputChange.type);
+
+
 
 // let oldText = "";
 
 // function handlertextInpChange(event) {
     
 //     // Варіант-1 (textInputChange.value) :
-//     oldText = textInputChange.value;
+//     oldText = textInputChange.value;   //   щоб тимчасово зберегти текст перед очищенням поля "input"
 
-//     // Варіант-2 (event.target.value) :
+//     // Варіант-2 (event.target.value)   (дивись рядок 3394 в "00-TEST-Dima-git") :
 //     // oldText = event.target.value;
        
 //     console.log(oldText);    
@@ -1114,7 +1123,7 @@
 // function handlerButInputChange(event) {
 
 // if(textInputChange.value !== "") {
-// textInputChange.value = "";
+// textInputChange.value = "";  //  щоб повністю очистити поле "input"
 // buttonInputChange.textContent = "Розкрити";
 // } else {
 // textInputChange.value = oldText;
@@ -1125,14 +1134,76 @@
 
 
 
+//........
 
 
+// ВАРІАНТ-2 (ПРИХОВУЄМО текст "КРАПКАМИ" в полі "input" при натисканні на кнопку "Приховати") :
+
+// ПРИМІТКА :  для того, щоб приховати текст в "<input id="passwordInput" type="text" />" треба змінити значення атрибута 'type="text"' на значення "type="password"   (01:41:30) -  (дивись рядок 152 в "00-TEST-Dima-git" як змінити значення атрибута) :
+
+// Тобто замість :
+// <input id="passwordInput" type="text" />
+
+// буде :
+// <input id="passwordInput" type="password" />
+
+//..........
+
+
+// const textInputChange = document.querySelector("#passwordInput");
+
+// const buttonInputChange = document.querySelector("#passwordButton");
+
+// buttonInputChange.addEventListener("click", handlerButInputChange);
+
+// function handlerButInputChange(event) {
+
+// if(textInputChange.value !== "" && textInputChange.type === "text") {
+// textInputChange.type = "password";  //   щоб ПРИХОВАТИ текст "крапками"
+// buttonInputChange.textContent = "Розкрити";
+// } else if(textInputChange.type === "password") {
+// textInputChange.type = "text";  //   щоб знову ПОКАЗАТИ текст 
+// buttonInputChange.textContent = "Приховати";
+// }
+// }
+
+
+//........
+
+
+// ВАРІАНТ-3 (альтернативний підхід - кнопка завжди змінює стан (послідовність поведінки)) :
+
+// Якщо поле порожнє, то перша умова не спрацює, і кнопка не змінить тип на "password", навіть якщо ви хочете просто "приховати" порожнє поле.
+// Деякі розробники вважають, що кнопка повинна працювати однаково, незалежно від вмісту поля. Кнопка має змінити тип на "password", навіть якщо поле порожнє (користувач може потім ввести текст і одразу розкрити). 
+
+//..........
+
+
+// const textInputChange = document.querySelector("#passwordInput");
+
+// const buttonInputChange = document.querySelector("#passwordButton");
+
+// buttonInputChange.addEventListener("click", handlerButInputChange);
+
+// function handlerButInputChange(event) {
+
+// if(textInputChange.type === "text") {
+// textInputChange.type = "password";  //   щоб ПРИХОВАТИ текст "крапками"
+// buttonInputChange.textContent = "Розкрити";
+// } else if(textInputChange.type === "password") {
+// textInputChange.type = "text";  //   щоб знову ПОКАЗАТИ текст 
+// buttonInputChange.textContent = "Приховати";
+// }
+// }
 
 
 
 //.............................
 //.............................
 
+
+// Завдання 10 (ментор Ivan Sinabdeev) : 
+// <!--- ЗАДАЧА 5 --->  (Урок 01:40:00)
 
 
 
