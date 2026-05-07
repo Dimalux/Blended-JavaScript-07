@@ -1133,7 +1133,6 @@
 
 
 
-
 //........
 
 
@@ -1198,12 +1197,124 @@
 
 
 
+//........
+
+
+// ВАРІАНТ-3 (МЕНТОР) :
+// (Урок 02:01:10)
+
+// const clickBtn = document.querySelector('#passwordButton');
+// const inputPass = document.querySelector('#passwordInput');
+
+// clickBtn.addEventListener("click", () => {
+//     const typeInput = inputPass.getAttribute("type");
+//     const toggleTypeInput = typeInput === "password" ? "text" : "password";
+//     inputPass.setAttribute("type", toggleTypeInput);
+
+//     const textBtn = clickBtn.textContent;
+//     const toggleTextBtn = textBtn === "Приховати" ? "Розкрити" : "Приховати";
+//     clickBtn.textContent = toggleTextBtn || "";
+// });
+
+// ПРИМІТКА :
+// Метод classList.toggle(className) - Метод працює як перемикач:
+// - якщо клас className відсутній, то додає його в кінець списку класів;
+// - і навпаки, якщо клас className присутній — видаляє його.
+
+
 //.............................
 //.............................
 
 
 // Завдання 10 (ментор Ivan Sinabdeev) : 
-// <!--- ЗАДАЧА 5 --->  (Урок 01:40:00)
+// <!--- ЗАДАЧА 5 --->  (Урок 02:02:20)      (повтор... рядок 669)
+
+// Кнопка "Зменшити" робить квадрат меньше на 10 пикселя, 
+// кнопка "Збільшити" - більше на 10 пикселя.
+
+
+// <p class="task-title">Task 4</p>
+// <div>
+// <div class="box"></div>
+// <button class="js-decrease" id="decrease">Зменьшити</button>
+// <button class="js-increase" id="increase">Збільшити</button>
+// </div>
+// </div>
+
+
+
+// ВАРІАНТ-1 (МІЙ) :
+
+// const btnDecrease = document.querySelector(".js-decrease");  //  кнопка "ЗМЕНЬШИТИ"
+// console.log(btnDecrease);
+
+// const btnIncrease = document.querySelector(".js-increase");  //  кнопка "ЗБІЛЬШИТИ"
+// console.log(btnDecrease);
+
+// const square = document.querySelector(".box");
+
+// square.style.width  = "50px";
+// square.style.height = "50px";
+
+// btnDecrease.addEventListener("click", handlerBtnDecrease);
+
+// btnIncrease.addEventListener("click", handlerBtnIncrease);
+
+// let numerSquare = 50;
+// function handlerBtnDecrease(event) {
+// numerSquare -= 10;
+// square.style.width = numerSquare + "px";
+// square.style.height = numerSquare + "px";
+// }
+
+// function handlerBtnIncrease(event) {
+// numerSquare += 10;
+// square.style.width = numerSquare + "px";
+// square.style.height = numerSquare + "px";
+// }
+
+
+//........
+
+
+// ВАРІАНТ-2 (МЕНТОР) :
+// (Урок 02:01:10)
+
+
+
+const btnDecrease = document.querySelector(".js-decrease");  //  кнопка "ЗМЕНЬШИТИ"
+console.log(btnDecrease);
+
+const btnIncrease = document.querySelector(".js-increase");  //  кнопка "ЗБІЛЬШИТИ"
+console.log(btnDecrease);
+
+const square = document.querySelector(".box");
+
+console.dir(square);   // !!!  "console.dir" покказує, які є властивості на цьому елементі "square"
+
+// Щоб не перетворювати з рядка на цифру   (Урок 02:04:02)
+
+
+
+square.style.width  = "50px";
+square.style.height = "50px";
+
+btnDecrease.addEventListener("click", handlerBtnDecrease);
+
+btnIncrease.addEventListener("click", handlerBtnIncrease);
+
+let numerSquare = 50;
+function handlerBtnDecrease(event) {
+numerSquare -= 10;
+square.style.width = numerSquare + "px";
+square.style.height = numerSquare + "px";
+}
+
+function handlerBtnIncrease(event) {
+numerSquare += 10;
+square.style.width = numerSquare + "px";
+square.style.height = numerSquare + "px";
+}
 
 
 
