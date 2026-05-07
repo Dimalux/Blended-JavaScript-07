@@ -1289,8 +1289,13 @@
 // console.dir(square);   // !!! РЕКОМЕНДАЦІЯ "console.dir" покказує, які є властивості на цьому елементі "square"    
 // // Щоб не перетворювати з рядка на цифру, скористуємось властивістями  "scrollHeight" і "scrollWidth", які відображають значення сторін квадрата (цифрове значення, НЕ РЯДОК) записані в css-файлі "styles.css" :
 
-// // scrollHeight: 50
+// // scrollHeight: 50        //   Ширина/висота ВМІСТУ (включаючи прокручувану частину)    ❌ Тільки для читання
 // // scrollWidth: 50
+
+// // або (ПРАВІЛЬНІШЕ)
+
+// // offsetHeight: 50       //   Фактична ширина/висота видимого елемента (включаючи border, padding)  ❌ Тільки для читання
+// // offsetWidth: 50
 
 // // Подивимось які значення в css-файлі "styles.css" :
 // console.log(square.scrollHeight);   //   50
@@ -1326,6 +1331,102 @@
 // console.log(numerSquareWidth);
 // console.log(numerSquareHeight);
 // }
+
+
+
+//........
+
+
+// ВАРІАНТ-3 (МЕНТОРА) :
+// (Урок 02:33:00)
+
+// ВИКОРИСТОВУЄМО :
+// offsetHeight: 50       //   Фактична ширина/висота видимого елемента (включаючи border, padding)  ❌ Тільки для читання
+// offsetWidth: 50
+
+
+const btnDec = document.querySelector("#decrease");
+const btnInc = document.querySelector("#increase");
+const boxEl = document.querySelector("#box");
+console.dir(boxEl);
+
+btnDec.addEventListener("click", changeBtnSize);
+btnInc.addEventListener("click", changeBtnSize);
+
+function changeBtnSize(event) {
+    const width = boxEl.offsetWidth;
+    const height = boxEl.offsetHeight;
+    const currentBtn = event.target.getAttribute("id");
+
+    console.log("! ~ changeBtnSize ~ currentBtn:", currentBtn);
+
+    switch (currentBtn) {
+    case "decrease":
+    boxEl.style.width = `${width - 10}px`;
+    boxEl.style.height = `${height - 10}px`;
+    break;
+
+    case "increase":
+    boxEl.style.width = `${width + 10}px`;
+    boxEl.style.height = `${height + 10}px`;
+    break;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//.............................
+//.............................
+
+
+// Завдання 11 (ментор Ivan Sinabdeev) : 
+// <!--- ЗАДАЧА 6 --->  (Урок 02:29:50)      (повтор... рядок 669)
+
+
+
+
+
+// Натиснувши кнопку "Подвоювати", збільшити значення
+// у кожному елементі списку у 2 рази
+
+// <!-- ЗАДАЧА 6 -->
+// <h2 class="taskTitle">ЗАДАЧА 6</h2>
+// <div class="container">
+// <ul class="list">
+// <li class="listItem item-1">1</li>
+// <li class="listItem item-2">4</li>
+// <li class="listItem item-3">8</li>
+// <li class="listItem item-4">16</li>
+// <li class="listItem item-5">32</li>
+// <li class="listItem item-6">64</li>
+// <li class="listItem item-7">128</li>
+// </ul>
+// <button id="double">Подвоювати</button>
+// </div>
+
+
+
+
+
+
+
 
 
 
