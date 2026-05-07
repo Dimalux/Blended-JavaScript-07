@@ -1277,44 +1277,55 @@
 //........
 
 
-// ВАРІАНТ-2 (МЕНТОР) :
-// (Урок 02:01:10)
+// ВАРІАНТ-2 (МІЙ з рекомендаціями МЕНТОРА) :
+// (Урок 02:04:02)
 
 
+// const btnDecrease = document.querySelector(".js-decrease");  //  кнопка "ЗМЕНЬШИТИ"
+// const btnIncrease = document.querySelector(".js-increase");  //  кнопка "ЗБІЛЬШИТИ"
 
-const btnDecrease = document.querySelector(".js-decrease");  //  кнопка "ЗМЕНЬШИТИ"
-console.log(btnDecrease);
+// const square = document.querySelector(".box");
 
-const btnIncrease = document.querySelector(".js-increase");  //  кнопка "ЗБІЛЬШИТИ"
-console.log(btnDecrease);
+// console.dir(square);   // !!! РЕКОМЕНДАЦІЯ "console.dir" покказує, які є властивості на цьому елементі "square"    
+// // Щоб не перетворювати з рядка на цифру, скористуємось властивістями  "scrollHeight" і "scrollWidth", які відображають значення сторін квадрата (цифрове значення, НЕ РЯДОК) записані в css-файлі "styles.css" :
 
-const square = document.querySelector(".box");
+// // scrollHeight: 50
+// // scrollWidth: 50
 
-console.dir(square);   // !!!  "console.dir" покказує, які є властивості на цьому елементі "square"
+// // Подивимось які значення в css-файлі "styles.css" :
+// console.log(square.scrollHeight);   //   50
+// console.log(square.scrollWidth);    //   50
 
-// Щоб не перетворювати з рядка на цифру   (Урок 02:04:02)
 
+// btnDecrease.addEventListener("click", handlerBtnDecrease);
+// btnIncrease.addEventListener("click", handlerBtnIncrease);
 
+// let numerSquareWidth = square.scrollWidth;
+// let numerSquareHeight = square.scrollHeight;
 
-square.style.width  = "50px";
-square.style.height = "50px";
+// // ЗМЕНЬШЕННЯ розміру квадрата :
+// function handlerBtnDecrease(event) {
+// numerSquareWidth -= 10;
+// square.style.width = numerSquareWidth + "px";
 
-btnDecrease.addEventListener("click", handlerBtnDecrease);
+// numerSquareHeight -= 10;
+// square.style.height = numerSquareHeight + "px";
 
-btnIncrease.addEventListener("click", handlerBtnIncrease);
+// console.log(numerSquareWidth);
+// console.log(numerSquareHeight);
+// }
 
-let numerSquare = 50;
-function handlerBtnDecrease(event) {
-numerSquare -= 10;
-square.style.width = numerSquare + "px";
-square.style.height = numerSquare + "px";
-}
+// // ЗБІЛЬШЕННЯ розміру квадрата :
+// function handlerBtnIncrease(event) {
+// numerSquareWidth += 10;
+// square.style.width = numerSquareWidth + "px";
 
-function handlerBtnIncrease(event) {
-numerSquare += 10;
-square.style.width = numerSquare + "px";
-square.style.height = numerSquare + "px";
-}
+// numerSquareHeight += 10;
+// square.style.height = numerSquareHeight + "px";
+
+// console.log(numerSquareWidth);
+// console.log(numerSquareHeight);
+// }
 
 
 
