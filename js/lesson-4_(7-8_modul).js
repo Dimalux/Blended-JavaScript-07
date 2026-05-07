@@ -1413,3 +1413,26 @@
 // listItemEl.forEach(item => item.textContent = Number(item.textContent) * 2);
 // }
 
+
+//........
+
+
+// ВАРІАНТ-3 (МЕНТОРА) :
+//  (Урок 02:50:00) 
+
+// const items = document.querySelector(".list").children;   // находим зі списку  <ul class="list"> всіх дітей <li> - ПСЕВДОМАСИВ
+// const clickBtn = document.querySelector("#double");
+
+// clickBtn.addEventListener("click", onBtnClick);
+
+// function onBtnClick() {
+//     [...items].map((item) => {      //   [...items]  - перетворюємо ПСЕВДОМАСИВ на звичайний МАСИВ, щоб використати метод "map()"
+//     item.textContent *= 2;
+//     });
+// }
+
+
+
+//  (!!! ПЕРЕДИВИСЬ 00:30:40)
+
+//  (.... 01:40:00)
